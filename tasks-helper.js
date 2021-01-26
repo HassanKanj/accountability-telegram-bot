@@ -97,6 +97,7 @@ function getDebugInfo() {
     allTasks[i].year = year;
   }
   result += `<u>Data used for debug purposes:</u>
+  nowInLocalTime: ${nowInLocalTime}
   nowDay:  ${nowDay}
   nowMonth:  ${nowMonth}
   nowYear:  ${nowYear}

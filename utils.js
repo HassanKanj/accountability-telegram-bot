@@ -1,18 +1,13 @@
 function isToday(dateStringInUTC) {
   _date = new Date(dateStringInUTC);
-  dateInLocalTime = _date.toLocaleString();
-  dateArray = dateInLocalTime.split(",")[0].split("/");
-  let day = dateArray[1];
-  let month = dateArray[0];
-  let year = dateArray[2];
+  let day = _date.getDay();
+  let month = _date.getMonth();
+  let year = _date.getYear();
 
   now = new Date();
-  nowInLocalTime = now.toLocaleString();
-
-  nowDateArray = nowInLocalTime.split(",")[0].split("/");
-  let nowDay = nowDateArray[1];
-  let nowMonth = nowDateArray[0];
-  let nowYear = nowDateArray[2];
+  let nowDay = now.getDay();
+  let nowMonth = now.getMonth();
+  let nowYear = now.getYear();
 
   if (year == nowYear && month == nowMonth && day == nowDay) {
     return true;

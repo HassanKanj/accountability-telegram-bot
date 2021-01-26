@@ -19,7 +19,7 @@ and you can specify the tasks using the **/add** command
 - Mark task as done
 - Mark task as pending
 - List your daily tasks
-- add a list of daily repeated tasks (the bot will automatically add them to the tasks list each day).
+- Add a list of daily repeated tasks (the bot will automatically add them to the tasks list each day).
 
 ## Usage
 

@@ -205,7 +205,6 @@ To add a task, type /add or /a followed by the task, for example:
   }
 }
 
-// send push notification (you can add multiple mediums here)
 function sendMessage(message) {
   telegramBot.sendMessage(process.env.MY_CHAT_ID, message, {
     parse_mode: "HTML",

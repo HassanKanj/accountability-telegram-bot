@@ -72,6 +72,41 @@ function allTodayTasksAreDone() {
   return false;
 }
 
+function getDebugInfo() {
+  let result = "";
+
+  now = new Date();
+  nowInLocalTime = now.toLocaleString();
+  nowDateArray = nowInLocalTime.split(",")[0].split("/");
+  let nowDay = nowDateArray[1];
+  let nowMonth = nowDateArray[0];
+  let nowYear = nowDateArray[2];
+
+  let allTasks = getAllTasks();
+  for (i = 0; i < allTasks.length; i++) {
+    allTasks[i].description = "[Hidden]";
+    let _date = new Date(allTasks[i].created_at);
+    let dateInLocalTime = _date.toLocaleString();
+    let dateArray = dateInLocalTime.split(",")[0].split("/");
+    let day = dateArray[1];
+    let month = dateArray[0];
+    let year = dateArray[2];
+    allTasks[i].date_in_local_time = dateInLocalTime;
+    allTasks[i].day = day;
+    allTasks[i].month = month;
+    allTasks[i].year = year;
+  }
+  result += `<u>Data used for debug purposes:</u>
+  nowDay:  ${nowDay}
+  nowMonth:  ${nowMonth}
+  nowYear:  ${nowYear}
+  --------------------
+  <u>All tasks in the DB:</u>
+  ${utils.jsonToString(allTasks)}
+    `;
+  return result;
+}
+
 /*
 getTasks()
 timeRange values: TODAY, ALL
@@ -239,4 +274,5 @@ module.exports = {
   deleteTask,
   formatTasksList,
   allTodayTasksAreDone,
+  getDebugInfo,
 };

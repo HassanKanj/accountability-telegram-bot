@@ -87,7 +87,18 @@ function start() {
     handleMarkTaskAsDone(message);
     handleMarkTaskAsPending(message);
     handleOtherCases(message);
+    handleDebug(message);
   });
+}
+
+function handleDebug(message) {
+  const regex = /^\/debug$/;
+  const matches = message.text.match(regex);
+
+  if (matches) {
+    const message = TasksHelper.getDebugInfo();
+    sendMessage(message);
+  }
 }
 
 function handleHelp(message) {

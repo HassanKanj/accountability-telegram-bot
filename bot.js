@@ -169,6 +169,11 @@ function handleMarkTaskAsDone(message) {
         sendMessage(
           `Good job ${configs.MY_NAME}! you've finished all your tasks for today, you can /add more tasks if you want or just relax and get some rest.`
         );
+      } else {
+        let { doneRatio, donePercentage } = getProgress();
+        doneRatio = `<b>${doneRatio}</b>`;
+        donePercentage = `<b>${donePercentage}</b>`;
+        sendMessage(`tasks done so far: ${doneRatio} (${donePercentage})`);
       }
     } catch (exception) {
       let errorMessage = exception.message;

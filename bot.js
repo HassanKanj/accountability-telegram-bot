@@ -255,13 +255,7 @@ function sendProgressMessage() {
   if (TasksHelper.allTodayTasksAreDone()) {
     return;
   }
-  let doneRatio = `${TasksHelper.getTodayCompletedTasksCount()}/${TasksHelper.getTodayTasksCount()}`;
-  let donePercentage =
-    (
-      (TasksHelper.getTodayCompletedTasksCount() /
-        TasksHelper.getTodayTasksCount()) *
-      100
-    ).toFixed(2) + "%";
+  let { doneRatio, donePercentage } = getProgress();
   doneRatio = `<b>${doneRatio}</b>`;
   donePercentage = `<b>${donePercentage}</b>`;
   let messages = [
@@ -271,6 +265,17 @@ function sendProgressMessage() {
   ];
   let randomIndex = Math.floor(Math.random() * 1000) % messages.length;
   sendMessage(messages[randomIndex]);
+}
+
+function getProgress() {
+  let doneRatio = `${TasksHelper.getTodayCompletedTasksCount()}/${TasksHelper.getTodayTasksCount()}`;
+  let donePercentage =
+    (
+      (TasksHelper.getTodayCompletedTasksCount() /
+        TasksHelper.getTodayTasksCount()) *
+      100
+    ).toFixed(2) + "%";
+  return { doneRatio: doneRatio, donePercentage: donePercentage };
 }
 
 module.exports = {

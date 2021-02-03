@@ -116,7 +116,12 @@ function handleListTasks(message) {
 
   if (matches) {
     const tasks = TasksHelper.getTodayTasks();
-    let message = TasksHelper.formatTasksList(tasks, "Tasks (Today)");
+
+    let { doneRatio, donePercentage } = getProgress();
+    doneRatio = `<b>${doneRatio}</b>`;
+    donePercentage = `<b>${donePercentage}</b>`;
+    let title = `Tasks (Today):\nDone: ${doneRatio} (${donePercentage})`;
+    let message = TasksHelper.formatTasksList(tasks, title);
     sendMessage(message);
   }
 }

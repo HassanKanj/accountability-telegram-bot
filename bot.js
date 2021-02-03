@@ -118,8 +118,6 @@ function handleListTasks(message) {
     const tasks = TasksHelper.getTodayTasks();
 
     let { doneRatio, donePercentage } = getProgress();
-    doneRatio = `<b>${doneRatio}</b>`;
-    donePercentage = `<b>${donePercentage}</b>`;
     let title = `Tasks (Today):\nDone: ${doneRatio} (${donePercentage})`;
     let message = TasksHelper.formatTasksList(tasks, title);
     sendMessage(message);

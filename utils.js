@@ -1,11 +1,11 @@
 function isToday(dateStringInUTC) {
   _date = new Date(dateStringInUTC);
-  let day = _date.getDay();
+  let day = _date.getDate();
   let month = _date.getMonth();
   let year = _date.getYear();
 
   now = new Date();
-  let nowDay = now.getDay();
+  let nowDay = now.getDate();
   let nowMonth = now.getMonth();
   let nowYear = now.getYear();
 

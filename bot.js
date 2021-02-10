@@ -53,7 +53,7 @@ function sendGreeting() {
   ];
 
   let now = new Date();
-  let day = days[now.getDay()];
+  let day = days[now.getDate()];
 
   sendMessage(`Hello ${configs.MY_NAME},
 

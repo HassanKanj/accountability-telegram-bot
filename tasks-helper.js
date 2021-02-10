@@ -76,7 +76,7 @@ function getDebugInfo() {
   let result = "";
 
   now = new Date();
-  let nowDay = now.getDay();
+  let nowDay = now.getDate();
   let nowMonth = now.getMonth();
   let nowYear = now.getYear();
 
@@ -86,7 +86,7 @@ function getDebugInfo() {
     let _date = new Date(allTasks[i].created_at);
     let dateInLocalTime = _date.toLocaleString();
     let dateArray = dateInLocalTime.split(",")[0].split("/");
-    let day = _date.getDay();
+    let day = _date.getDate();
     let month = _date.getMonth();
     let year = _date.getYear();
 

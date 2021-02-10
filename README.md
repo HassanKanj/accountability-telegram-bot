@@ -1,5 +1,7 @@
 # Accountability Telegram bot
 
+[![An open source project from Lebanon](https://github.com/HassanKanj/opensource-project-from-lebanon/blob/main/badge-400px.png)](https://github.com/HassanKanj/opensource-project-from-lebanon/)
+
 A Telegram bot that will manage your daily tasks and send you messages regarding your progress.
 
 ![image](https://github.com/HassanKanj/accountability-telegram-bot/blob/main/documentation/images/main-image.jpg)

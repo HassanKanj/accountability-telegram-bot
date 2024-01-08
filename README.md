@@ -1,4 +1,5 @@
 # Accountability Telegram bot
+[![ReadMeSupportPalestine](https://raw.githubusercontent.com/Safouene1/support-palestine-banner/master/banner-support.svg)](https://techforpalestine.org/learn-more)
 
 [![An open source project from Lebanon](https://github.com/HassanKanj/opensource-project-from-lebanon/blob/main/badge-400px.png)](https://github.com/HassanKanj/opensource-project-from-lebanon/)
 
